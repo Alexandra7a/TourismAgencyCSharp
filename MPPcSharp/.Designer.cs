@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.allTripsGrid = new System.Windows.Forms.DataGridView();
-            this.filteredTripsGrid = new System.Windows.Forms.DataGridView();
+            this.allTripsGridPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allTripsGridTransportCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allTripsGridDeparture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allTripsGridPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allTripsGridNoSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientsGrid = new System.Windows.Forms.DataGridView();
+            this.clientsGridUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,50 +44,100 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.placeField = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.reserveButton = new System.Windows.Forms.Button();
+            this.filter = new System.Windows.Forms.Button();
             this.startDatePicker = new System.Windows.Forms.DateTimePicker();
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.hour2Field = new System.Windows.Forms.ComboBox();
-            this.hour1Field = new System.Windows.Forms.ComboBox();
+            this.hour2Combo = new System.Windows.Forms.ComboBox();
+            this.hour1Combo = new System.Windows.Forms.ComboBox();
             this.noSeatsField = new System.Windows.Forms.TextBox();
             this.phoneNumberField = new System.Windows.Forms.TextBox();
             this.nameField = new System.Windows.Forms.TextBox();
+            this.filteredTripsGrid = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.filteredTripsGridPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filteredTripsGridTransportCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filteredTripsGridDeparture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filteredTripsGridPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filteredTripsGridNoSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.allTripsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteredTripsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filteredTripsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // allTripsGrid
             // 
             this.allTripsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.allTripsGrid.Location = new System.Drawing.Point(30, 12);
+            this.allTripsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.allTripsGridPlace,
+            this.allTripsGridTransportCompanyName,
+            this.allTripsGridDeparture,
+            this.allTripsGridPrice,
+            this.allTripsGridNoSeats});
+            this.allTripsGrid.Location = new System.Drawing.Point(30, 27);
             this.allTripsGrid.Name = "allTripsGrid";
             this.allTripsGrid.RowHeadersWidth = 51;
             this.allTripsGrid.RowTemplate.Height = 24;
-            this.allTripsGrid.Size = new System.Drawing.Size(865, 107);
+            this.allTripsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.allTripsGrid.Size = new System.Drawing.Size(944, 128);
             this.allTripsGrid.TabIndex = 0;
             this.allTripsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allTripsGrid_CellContentClick);
             // 
-            // filteredTripsGrid
+            // allTripsGridPlace
             // 
-            this.filteredTripsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filteredTripsGrid.Location = new System.Drawing.Point(475, 346);
-            this.filteredTripsGrid.Name = "filteredTripsGrid";
-            this.filteredTripsGrid.RowHeadersWidth = 51;
-            this.filteredTripsGrid.RowTemplate.Height = 24;
-            this.filteredTripsGrid.Size = new System.Drawing.Size(534, 172);
-            this.filteredTripsGrid.TabIndex = 1;
+            this.allTripsGridPlace.HeaderText = "Place";
+            this.allTripsGridPlace.MinimumWidth = 6;
+            this.allTripsGridPlace.Name = "allTripsGridPlace";
+            this.allTripsGridPlace.Width = 125;
+            // 
+            // allTripsGridTransportCompanyName
+            // 
+            this.allTripsGridTransportCompanyName.HeaderText = "transport Company";
+            this.allTripsGridTransportCompanyName.MinimumWidth = 6;
+            this.allTripsGridTransportCompanyName.Name = "allTripsGridTransportCompanyName";
+            this.allTripsGridTransportCompanyName.Width = 125;
+            // 
+            // allTripsGridDeparture
+            // 
+            this.allTripsGridDeparture.HeaderText = "departure";
+            this.allTripsGridDeparture.MinimumWidth = 6;
+            this.allTripsGridDeparture.Name = "allTripsGridDeparture";
+            this.allTripsGridDeparture.Width = 125;
+            // 
+            // allTripsGridPrice
+            // 
+            this.allTripsGridPrice.HeaderText = "price";
+            this.allTripsGridPrice.MinimumWidth = 6;
+            this.allTripsGridPrice.Name = "allTripsGridPrice";
+            this.allTripsGridPrice.Width = 125;
+            // 
+            // allTripsGridNoSeats
+            // 
+            this.allTripsGridNoSeats.HeaderText = "noSeats";
+            this.allTripsGridNoSeats.MinimumWidth = 6;
+            this.allTripsGridNoSeats.Name = "allTripsGridNoSeats";
+            this.allTripsGridNoSeats.Width = 125;
             // 
             // clientsGrid
             // 
             this.clientsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientsGridUsername});
             this.clientsGrid.Location = new System.Drawing.Point(12, 346);
             this.clientsGrid.Name = "clientsGrid";
             this.clientsGrid.RowHeadersWidth = 51;
             this.clientsGrid.RowTemplate.Height = 24;
+            this.clientsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientsGrid.Size = new System.Drawing.Size(369, 172);
             this.clientsGrid.TabIndex = 2;
+            // 
+            // clientsGridUsername
+            // 
+            this.clientsGridUsername.HeaderText = "username";
+            this.clientsGridUsername.MinimumWidth = 6;
+            this.clientsGridUsername.Name = "clientsGridUsername";
+            this.clientsGridUsername.Width = 125;
             // 
             // label1
             // 
@@ -156,23 +211,25 @@
             this.placeField.Size = new System.Drawing.Size(134, 22);
             this.placeField.TabIndex = 10;
             // 
-            // button1
+            // reserveButton
             // 
-            this.button1.Location = new System.Drawing.Point(306, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Reserve";
-            this.button1.UseVisualStyleBackColor = true;
+            this.reserveButton.Location = new System.Drawing.Point(306, 270);
+            this.reserveButton.Name = "reserveButton";
+            this.reserveButton.Size = new System.Drawing.Size(75, 23);
+            this.reserveButton.TabIndex = 11;
+            this.reserveButton.Text = "Reserve";
+            this.reserveButton.UseVisualStyleBackColor = true;
+            this.reserveButton.Click += new System.EventHandler(this.reserveButton_Click);
             // 
-            // button2
+            // filter
             // 
-            this.button2.Location = new System.Drawing.Point(934, 305);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "filter";
-            this.button2.UseVisualStyleBackColor = true;
+            this.filter.Location = new System.Drawing.Point(934, 305);
+            this.filter.Name = "filter";
+            this.filter.Size = new System.Drawing.Size(75, 23);
+            this.filter.TabIndex = 12;
+            this.filter.Text = "filter";
+            this.filter.UseVisualStyleBackColor = true;
+            this.filter.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // startDatePicker
             // 
@@ -188,21 +245,71 @@
             this.endDatePicker.Size = new System.Drawing.Size(250, 22);
             this.endDatePicker.TabIndex = 14;
             // 
-            // hour2Field
+            // hour2Combo
             // 
-            this.hour2Field.FormattingEnabled = true;
-            this.hour2Field.Location = new System.Drawing.Point(888, 257);
-            this.hour2Field.Name = "hour2Field";
-            this.hour2Field.Size = new System.Drawing.Size(121, 24);
-            this.hour2Field.TabIndex = 15;
+            this.hour2Combo.FormattingEnabled = true;
+            this.hour2Combo.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.hour2Combo.Location = new System.Drawing.Point(888, 257);
+            this.hour2Combo.Name = "hour2Combo";
+            this.hour2Combo.Size = new System.Drawing.Size(121, 24);
+            this.hour2Combo.TabIndex = 15;
             // 
-            // hour1Field
+            // hour1Combo
             // 
-            this.hour1Field.FormattingEnabled = true;
-            this.hour1Field.Location = new System.Drawing.Point(888, 215);
-            this.hour1Field.Name = "hour1Field";
-            this.hour1Field.Size = new System.Drawing.Size(121, 24);
-            this.hour1Field.TabIndex = 16;
+            this.hour1Combo.FormattingEnabled = true;
+            this.hour1Combo.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.hour1Combo.Location = new System.Drawing.Point(888, 221);
+            this.hour1Combo.Name = "hour1Combo";
+            this.hour1Combo.Size = new System.Drawing.Size(121, 24);
+            this.hour1Combo.TabIndex = 16;
             // 
             // noSeatsField
             // 
@@ -225,20 +332,95 @@
             this.nameField.Size = new System.Drawing.Size(182, 22);
             this.nameField.TabIndex = 19;
             // 
+            // filteredTripsGrid
+            // 
+            this.filteredTripsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filteredTripsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filteredTripsGridPlace,
+            this.filteredTripsGridTransportCompany,
+            this.filteredTripsGridDeparture,
+            this.filteredTripsGridPrice,
+            this.filteredTripsGridNoSeats});
+            this.filteredTripsGrid.Location = new System.Drawing.Point(452, 334);
+            this.filteredTripsGrid.Name = "filteredTripsGrid";
+            this.filteredTripsGrid.RowHeadersWidth = 51;
+            this.filteredTripsGrid.RowTemplate.Height = 24;
+            this.filteredTripsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.filteredTripsGrid.Size = new System.Drawing.Size(682, 116);
+            this.filteredTripsGrid.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(7, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(141, 29);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Reservation";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(447, 172);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 29);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Filter";
+            // 
+            // filteredTripsGridPlace
+            // 
+            this.filteredTripsGridPlace.HeaderText = "place";
+            this.filteredTripsGridPlace.MinimumWidth = 6;
+            this.filteredTripsGridPlace.Name = "filteredTripsGridPlace";
+            this.filteredTripsGridPlace.Width = 125;
+            // 
+            // filteredTripsGridTransportCompany
+            // 
+            this.filteredTripsGridTransportCompany.HeaderText = "transport Company";
+            this.filteredTripsGridTransportCompany.MinimumWidth = 6;
+            this.filteredTripsGridTransportCompany.Name = "filteredTripsGridTransportCompany";
+            this.filteredTripsGridTransportCompany.Width = 125;
+            // 
+            // filteredTripsGridDeparture
+            // 
+            this.filteredTripsGridDeparture.HeaderText = "depature";
+            this.filteredTripsGridDeparture.MinimumWidth = 6;
+            this.filteredTripsGridDeparture.Name = "filteredTripsGridDeparture";
+            this.filteredTripsGridDeparture.Width = 125;
+            // 
+            // filteredTripsGridPrice
+            // 
+            this.filteredTripsGridPrice.HeaderText = "price";
+            this.filteredTripsGridPrice.MinimumWidth = 6;
+            this.filteredTripsGridPrice.Name = "filteredTripsGridPrice";
+            this.filteredTripsGridPrice.Width = 125;
+            // 
+            // filteredTripsGridNoSeats
+            // 
+            this.filteredTripsGridNoSeats.HeaderText = "noSeats";
+            this.filteredTripsGridNoSeats.MinimumWidth = 6;
+            this.filteredTripsGridNoSeats.Name = "filteredTripsGridNoSeats";
+            this.filteredTripsGridNoSeats.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 530);
+            this.ClientSize = new System.Drawing.Size(1177, 563);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.filteredTripsGrid);
             this.Controls.Add(this.nameField);
             this.Controls.Add(this.phoneNumberField);
             this.Controls.Add(this.noSeatsField);
-            this.Controls.Add(this.hour1Field);
-            this.Controls.Add(this.hour2Field);
+            this.Controls.Add(this.hour1Combo);
+            this.Controls.Add(this.hour2Combo);
             this.Controls.Add(this.endDatePicker);
             this.Controls.Add(this.startDatePicker);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.filter);
+            this.Controls.Add(this.reserveButton);
             this.Controls.Add(this.placeField);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -248,13 +430,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clientsGrid);
-            this.Controls.Add(this.filteredTripsGrid);
             this.Controls.Add(this.allTripsGrid);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.allTripsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteredTripsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filteredTripsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +444,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView allTripsGrid;
-        private System.Windows.Forms.DataGridView filteredTripsGrid;
         private System.Windows.Forms.DataGridView clientsGrid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -272,16 +452,30 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox placeField;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reserveButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button filter;
         private System.Windows.Forms.DateTimePicker startDatePicker;
         private System.Windows.Forms.DateTimePicker endDatePicker;
-        private System.Windows.Forms.ComboBox hour2Field;
-        private System.Windows.Forms.ComboBox hour1Field;
+        private System.Windows.Forms.ComboBox hour2Combo;
+        private System.Windows.Forms.ComboBox hour1Combo;
         private System.Windows.Forms.TextBox noSeatsField;
         private System.Windows.Forms.TextBox phoneNumberField;
         private System.Windows.Forms.TextBox nameField;
+        private System.Windows.Forms.DataGridView filteredTripsGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allTripsGridPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allTripsGridTransportCompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allTripsGridDeparture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allTripsGridPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allTripsGridNoSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientsGridUsername;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filteredTripsGridPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filteredTripsGridTransportCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filteredTripsGridDeparture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filteredTripsGridPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filteredTripsGridNoSeats;
     }
 }
 

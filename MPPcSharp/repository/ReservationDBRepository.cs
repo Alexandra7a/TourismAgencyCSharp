@@ -43,7 +43,7 @@ namespace TemaMPPcSharp.Repository
         public bool save(Reservation entity)
         {
 
-            logger.InfoFormat("Entered save reservation {0}" + entity);
+            logger.InfoFormat("Entered save reservation {0}", entity);
             using (var comm=connection.CreateCommand())
             {
                 comm.CommandText = "insert into reservations (clientName, phoneNumber, noSeats, id_trip, username_employee, id_client) " +
@@ -66,19 +66,19 @@ namespace TemaMPPcSharp.Repository
                 
                 IDbDataParameter id_trip = comm.CreateParameter();
                 id_trip.ParameterName = "@id_trip";
-                id_trip.Value = entity.Trip;
+                id_trip.Value = entity.Trip.Id;
                 comm.Parameters.Add(id_trip);
 
                 IDbDataParameter username_employee = comm.CreateParameter();
                 username_employee.ParameterName = "@username_employee";
-                username_employee.Value = entity.Employee;
+                username_employee.Value = entity.Employee.Username;
                 comm.Parameters.Add(username_employee);
 
       
 
                 IDbDataParameter id_client = comm.CreateParameter();
                 id_client.ParameterName = "@id_client";
-                id_client.Value = entity.Client;
+                id_client.Value = entity.Client.Id;
                 comm.Parameters.Add(id_client);
 
                 var result = comm.ExecuteNonQuery();
@@ -96,6 +96,29 @@ namespace TemaMPPcSharp.Repository
         public bool update(long id, Reservation entity)
         {
             throw new NotImplementedException();
+        }
+
+        internal int getAllReservationsAt(long id)
+        {
+            logger.InfoFormat("Entered getAllReservationsAt {0}", id);
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select sum(noSeats) from reservations group by id_trip having id_trip=@id_trip;";
+                IDbDataParameter id_trip = comm.CreateParameter();
+                id_trip.ParameterName = "@id_trip";
+                id_trip.Value =id;
+                comm.Parameters.Add(id_trip);
+                using (var dataR = comm.ExecuteReader())
+                { 
+                    if(dataR.Read())
+                    {
+                        Console.WriteLine("Aici sunt ", dataR.GetInt32(0));
+                        int result = dataR.GetInt32(0);
+                        return result;
+                    }
+                }
+            }
+            return 0;
         }
     }
 }

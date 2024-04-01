@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TemaMPPcSharp.Model;
 using TemaMPPcSharp.Repository;
 
 namespace MPPcSharp.service
@@ -39,6 +40,27 @@ namespace MPPcSharp.service
           
         }
 
+        internal int getAllReservationsAt(long id)
+        {
+            return reservationRepository.getAllReservationsAt(id);
+        }
 
+        internal IEnumerable<Client> getAllClients()
+        {
+            return clientRepository.findAll();
+        }
+
+        internal IEnumerable<Trip> getAllFilteredTris(string place, DateTime startDate,DateTime endDate)
+        {
+            return tripRepository.findAllTripPlaceTime(place,startDate,endDate);
+        }
+
+        internal void saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Client client)
+        {
+            Reservation reservation = new Reservation(clientName, phoneNumber, noSeats, trip, responsibleEmployee, client);
+            if (!reservationRepository.save(reservation))
+                throw new Exception("Not saved");
+
+        }
     }
 }

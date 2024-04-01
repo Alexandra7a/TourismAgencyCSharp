@@ -1,4 +1,5 @@
-﻿using Lab2MPP.Repository;
+﻿using Lab2MPP.Model;
+using Lab2MPP.Repository;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,28 @@ namespace MPPcSharp.repository
 
         public IEnumerable<Client> findAll()
         {
-            throw new NotImplementedException();
+            logger.Info("entered the findAll method ");
+            IList<Client> clients = new List<Client>();
+            using (var comm = connection.CreateCommand())
+            {
+                comm.CommandText = "select id_client,username,birthDay from [clients];";
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        long id = dataR.GetInt64(0);
+                        string username = dataR.GetString(1);
+                        string birthday = dataR.GetString(2);
+                        Client client = new Client(username, DateTime.Parse(birthday));
+                        client.Id = id;
+                        clients.Add(client);
+
+                    }
+                }
+                logger.Info("finised findAll");
+                return clients;
+            }
         }
 
         public Client findOne(long id)

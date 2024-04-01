@@ -29,7 +29,7 @@ namespace MPPcSharp
             var result = service.findUser(userField.Text.ToString(), passField.Text.ToString());
             if (result != null)
             {
-                Form ff = new Form1();
+                Form ff = new Form1(service,result);
                 ff.Show();
             }
             else

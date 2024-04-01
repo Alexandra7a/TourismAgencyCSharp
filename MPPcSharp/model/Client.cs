@@ -9,13 +9,16 @@ namespace TemaMPPcSharp.Model
 {
     internal class Client : Entity<long>
     {
-        private string Usernamr { get; set; }
-        private DateTime BirthDate  { get; set; } // i cannot use just a date component. I have read about DateOnly but idk
+        private string username;
+        private DateTime birthDay;
+
+        public string Username { get { return username; } set { username = value; } }
+        public DateTime BirthDay  { get { return birthDay; } set { birthDay = value; } }
 
         public Client(string usernamr, DateTime birthDate)
         {
-            Usernamr = usernamr;
-            BirthDate = birthDate;
+            username = usernamr;
+            birthDay = birthDate;
         }
     }
 }

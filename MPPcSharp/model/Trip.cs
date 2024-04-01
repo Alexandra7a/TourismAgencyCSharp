@@ -9,39 +9,45 @@ namespace Lab2MPP.Model
 {
     internal class Trip : Entity<long>
     {
-        private string Place { get; set; }
-        private string TransportCompanyName{ get; set; }
-        private DateTime Departure { get; set; }
-        private float Price { get; set; }
-        private int TotalSeats { get; set; }
+        private string place { get; set; }
+        private string transportCompanyName{ get; set; }
+        private DateTime departure { get; set; }
+        private float price { get; set; }
+        private int totalSeats { get; set; }
+
+        public string TransportCompanyName { get { return transportCompanyName; } set { transportCompanyName = value; } }
+        public string Place{  get { return place; } set { place = value; } }
+        public DateTime Departure { get { return departure; } set { departure = value; } }
+        public float Price { get { return price; } set { price = value; } }
+        public int TotalSeats { get { return totalSeats; } set { totalSeats = value; } }
 
         public Trip(string place, string transportCompanyName, DateTime departure, float price, int totalSeats)
         {
-            this.Place = place;
-            this.TransportCompanyName = transportCompanyName;
-            this.Departure = departure;
-            this.Price = price;
-            this.TotalSeats = totalSeats;
+            this.place = place;
+            this.transportCompanyName = transportCompanyName;
+            this.departure = departure;
+            this.price = price;
+            this.totalSeats = totalSeats;
         }
 
         public override bool Equals(object obj)
         {
             return obj is Trip trip &&
-                   Place == trip.Place &&
-                   TransportCompanyName == trip.TransportCompanyName &&
-                   Departure == trip.Departure &&
-                   Price == trip.Price &&
-                   TotalSeats == trip.TotalSeats;
+                   place == trip.Place &&
+                   transportCompanyName == trip.TransportCompanyName &&
+                   departure == trip.Departure &&
+                   price == trip.Price &&
+                   totalSeats == trip.TotalSeats;
         }
 
         public override string ToString()
         {
             return "Trip{" +
-                "place='" + Place + '\'' +
-                ", transportCompanyName='" + TransportCompanyName + '\'' +
-                ", departure=" + Departure +
-                ", price=" + Price +
-                ", totalSeats=" + TotalSeats +
+                "place='" + place + '\'' +
+                ", transportCompanyName='" + transportCompanyName + '\'' +
+                ", departure=" + departure +
+                ", price=" + price +
+                ", totalSeats=" + totalSeats +
                 '}';
         }
 

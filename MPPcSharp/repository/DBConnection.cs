@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
 using Microsoft.Data.SqlClient;
 
 namespace Lab2MPP.Repository
@@ -34,7 +34,7 @@ namespace Lab2MPP.Repository
         {
             String connectionString = props["ConnectionString"];
             Console.WriteLine("SQLite ---Se deschide o conexiune la  ... {0}", connectionString);
-            return new SqliteConnection(connectionString);
+            return new SQLiteConnection(connectionString);
             //return ConnectionUtils.ConnectionFactory.getInstance().createConnection(props);
         }
 

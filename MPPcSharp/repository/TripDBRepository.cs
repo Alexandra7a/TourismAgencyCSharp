@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using Microsoft.Data.Sqlite;
 using System.Data;
 using System.Drawing;
 using log4net.DateFormatter;
@@ -15,6 +14,7 @@ namespace TemaMPPcSharp.Repository
 {
     internal class TripDBRepository : IRepository<long, Trip>
     {
+
 
         private static readonly ILog logger = LogManager.GetLogger("TripDBRepository");
         private IDbConnection connection;
@@ -65,29 +65,36 @@ namespace TemaMPPcSharp.Repository
             logger.InfoFormat("got all trips {0}",trips.ToArray() );
             return trips;
         }
-        public IEnumerable<Trip> findAllTripPlaceTime(String placeToVisit, DateTime startTime, DateTime endTime)
+        public IEnumerable<Trip> findAllTripPlaceTime(string placeToVisit, DateTime startTime, DateTime endTime)
         {
             logger.Info("entered the findAllTripPlaceTime method ");
             IList<Trip> filtered_trips = new List<Trip>();
             using (var comm = connection.CreateCommand())
             {
                 comm.CommandText = "select id_trip, place, transportCompanyName, " +
-                    "departure, price, totalSeats from [trips] where place=@placeToVisit;";
+                    "departure, price, totalSeats from [trips] where place=@placeToVisit and departure>@startTime and departure<@endTime;";
 
                 IDbDataParameter paramPlace = comm.CreateParameter();
-                paramPlace.ParameterName = "@placeToVisit ";
+                paramPlace.ParameterName = "@placeToVisit";
                 paramPlace.Value = placeToVisit;
                 comm.Parameters.Add(paramPlace);
 
-               /* IDbDataParameter paramStartTime=comm.CreateParameter();
+                IDbDataParameter paramStartTime=comm.CreateParameter();
                 paramStartTime.ParameterName = "@startTime";
                 paramStartTime.Value = startTime.ToString(pattern);
-                
+                comm.Parameters.Add(paramStartTime);
+
 
 
                 IDbDataParameter paramEndDate =comm.CreateParameter();
                 paramEndDate.ParameterName = "@endTime";
-                paramEndDate.Value = endTime.ToString(pattern);*/
+                paramEndDate.Value = endTime.ToString(pattern);
+                comm.Parameters.Add(paramEndDate);
+                Console.WriteLine(startTime);
+                Console.WriteLine(endTime);
+                Console.WriteLine("modificate");
+                Console.WriteLine(startTime.ToString(pattern));
+                Console.WriteLine(endTime.ToString(pattern));
 
                 using (var dataR = comm.ExecuteReader()) { 
                

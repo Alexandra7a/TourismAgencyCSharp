@@ -51,7 +51,7 @@ namespace MPPcSharp.repository
                 comm.CommandText = "select username, pass from employees where username=@username";
 
                 IDbDataParameter paramUser = comm.CreateParameter();
-                paramUser.ParameterName = "@username ";
+                paramUser.ParameterName = "@username";
                 paramUser.Value = username;
                 comm.Parameters.Add(paramUser);
 
@@ -59,7 +59,6 @@ namespace MPPcSharp.repository
                 {
                     if (dataR.Read())
                     {
-
                         string user = dataR.GetString(0);
                         string pass = dataR.GetString(1);
                         Employee employee = new Employee(user, pass);
