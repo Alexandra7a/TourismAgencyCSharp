@@ -88,9 +88,9 @@ namespace Client.business
                 {
                     object response = formatter.Deserialize(stream);
                     Console.WriteLine("response received " + response);
-                   /* if (response is NotifyResponse notifyResponse)
+                    if (response is NotifyResponse notifyResponse)
                     {
-                        //this.client.notify(notifyResponse.donation);
+                       this.client.notify(notifyResponse.donation);
                     }
                     else
                     {
@@ -99,7 +99,7 @@ namespace Client.business
                             responses.Enqueue((IResponse)response);
                         }
                         _waitHandle.Set();
-                    }*/
+                    }
                 }
                 catch (Exception e)
                 {
@@ -142,11 +142,13 @@ namespace Client.business
 
         public IEnumerable<Trip> getAllTrip()
         {
+           
             throw new NotImplementedException();
         }
 
         public Employee findUser(string user, string pass)
         {
+            initializeConnection();
             sendRequest(new LoginRequest(user,pass));
             IResponse response = readResponse();
             if (response is ErrorResponse)

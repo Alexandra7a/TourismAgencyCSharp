@@ -7,6 +7,8 @@ using Common.model;
 
 namespace Common.model
 {
+    [Serializable]
+
     public class Reservation : Entity<long>
     {
         public string ClientName { get; set; }

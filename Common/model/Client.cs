@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Common.model
 {
+    [Serializable]
+
     public class Client : Entity<long>
     {
         private string username;

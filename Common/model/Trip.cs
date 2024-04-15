@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Common.model
 {
+    [Serializable]
+
     public class Trip : Entity<long>
     {
         private string place { get; set; }

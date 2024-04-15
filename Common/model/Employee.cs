@@ -7,8 +7,11 @@ using System.Xml.Linq;
 
 namespace Common.model
 {
+    [Serializable]
+
     public class Employee : Entity<long>
     {
+
         private string username { get; set; }
         private string password { get; set; }
         public string Username

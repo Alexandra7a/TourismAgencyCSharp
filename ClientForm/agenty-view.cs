@@ -23,8 +23,8 @@ namespace ClientForm
             InitializeComponent();
             this.service = service;
             this.responsibleEmployee = responsibleEmployee;
-            InitModel();
-            InitClientModel();
+           // InitModel();
+           // InitClientModel();
         }
         private string pattern = "yyyy-MM-dd HH:mm";
 

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Common.model
 {
+    [Serializable]
+
     public class Entity<ID>
     {
         protected ID id;
