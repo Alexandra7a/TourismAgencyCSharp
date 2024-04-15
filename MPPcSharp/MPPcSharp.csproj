@@ -186,39 +186,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agenty-view.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>agenty-view.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="log-in-view.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="log-in-view.Designer.cs">
-      <DependentUpon>log-in-view.cs</DependentUpon>
-    </Compile>
-    <Compile Include="model\Client.cs" />
-    <Compile Include="model\Employee.cs" />
-    <Compile Include="model\Entity.cs" />
-    <Compile Include="model\Reservation.cs" />
-    <Compile Include="model\Trip.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="repository\ClientDBRepository.cs" />
-    <Compile Include="repository\DBConnection.cs" />
-    <Compile Include="repository\EmployeeDBRepository.cs" />
-    <Compile Include="repository\IRepository.cs" />
-    <Compile Include="repository\ReservationDBRepository.cs" />
-    <Compile Include="repository\TripDBRepository.cs" />
-    <Compile Include="service\Service.cs" />
-    <EmbeddedResource Include="agenty-view.resx">
-      <DependentUpon>agenty-view.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="log-in-view.resx">
-      <DependentUpon>log-in-view.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -229,7 +197,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -239,19 +206,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="repository\agentieTurism.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="agentieTurism.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="agentieTurism_log.ldf">
-      <DependentUpon>agentieTurism.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
