@@ -10,11 +10,10 @@ namespace Common.networking.response
       [Serializable]
   public class NotifyResponse : IResponse
     {
-        public Reservation donation;
+        //   public Reservation donation;
 
-        public NotifyResponse(Reservation donation)
+        public NotifyResponse()
         {
-            this.donation = donation;
-        }
+        }  
     }
 }

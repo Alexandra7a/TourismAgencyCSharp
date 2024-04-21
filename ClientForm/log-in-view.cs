@@ -38,7 +38,9 @@ namespace ClientForm
             if (result != null)
             {
                 Form ff = new Form1(service,result);
+               
                 ff.Show();
+                //this.Close();
             }
             else
             {

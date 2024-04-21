@@ -44,9 +44,9 @@ namespace Server.business
             return reservationRepository.getAllReservationsAt(id);
         }
 
-        public IEnumerable<Client> getAllClients()
+        public IEnumerable<Common.model.Client> getAllClients()
         {
-            return clientRepository.findAll();
+            return (IEnumerable<Common.model.Client>)clientRepository.findAll();
         }
 
         public IEnumerable<Trip> getAllFilteredTris(string place, DateTime startDate, DateTime endDate)
@@ -54,13 +54,18 @@ namespace Server.business
             return tripRepository.findAllTripPlaceTime(place, startDate, endDate);
         }
 
-        public void saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Client client)
+        public bool saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Common.model.Client client)
         {
             Reservation reservation = new Reservation(clientName, phoneNumber, noSeats, trip, responsibleEmployee, client);
             if (!reservationRepository.save(reservation))
                 throw new Exception("Not saved");
+            return true;
 
         }
 
+        public void logOutClicked()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

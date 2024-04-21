@@ -19,7 +19,7 @@ using Common.networking.response;
 
 
 /// to do
-namespace Client.business
+namespace ClientForm.business
 {
     internal class ServiceProxy : IService
     {
@@ -90,7 +90,7 @@ namespace Client.business
                     Console.WriteLine("response received " + response);
                     if (response is NotifyResponse notifyResponse)
                     {
-                       this.client.notify(notifyResponse.donation);
+                        client.notify(); ///// aici notific clientii ca s-a schimbat lista 
                     }
                     else
                     {
@@ -142,14 +142,23 @@ namespace Client.business
 
         public IEnumerable<Trip> getAllTrip()
         {
-           
+            sendRequest(new FindAllTripsRequest());
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("Trips not retrieved error");
+            }
+            else
+            {
+                return ((FindAllTripsResponse)response).tripList;
+            }
             throw new NotImplementedException();
         }
 
         public Employee findUser(string user, string pass)
         {
             initializeConnection();
-            sendRequest(new LoginRequest(user,pass));
+            sendRequest(new LoginRequest(user, pass));
             IResponse response = readResponse();
             if (response is ErrorResponse)
             {
@@ -167,25 +176,91 @@ namespace Client.business
 
         public int getAllReservationsAt(long id)
         {
-            throw new NotImplementedException();
+            sendRequest(new getAllReservationsAtRequest(id));
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("getAllReservationsAt error");
+            }
+            else
+            {
+                return ((getAllReservationsAtResponse)response).no;
+            }
         }
 
-        public IEnumerable<Common.model.Client> getAllClients()
+        public IEnumerable<Client> getAllClients()
         {
-            throw new NotImplementedException();
+            sendRequest(new getAllClientsRequest());
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("get all CLients error");
+            }
+            else
+            {
+                return ((getAllClientsResponse)response).clientList;
+            }
         }
 
         public IEnumerable<Trip> getAllFilteredTris(string place, DateTime startDate, DateTime endDate)
         {
+            sendRequest(new getAllFilteredTripsRequest(place, startDate, endDate));
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("get filtered Trips error");
+            }
+            else
+            {
+                return ((getAllFilteredTripsResponse)response).tripList;
+            }
             throw new NotImplementedException();
         }
 
-        public void saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Common.model.Client client)
+        public bool saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Client client)
         {
-            throw new NotImplementedException();
+
+            sendRequest(new saveReservationRequest(clientName, phoneNumber, noSeats, trip, responsibleEmployee, client));
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("reservation not made");
+            }
+            return true;
+        }
+        public void logOutClicked()
+        {
+            /*initializeConnection();
+            sendRequest(new LoginRequest(user, pass));
+            IResponse response = readResponse();
+            if (response is ErrorResponse)
+            {
+                throw new Exception("Login error");
+            }
+            else if (response is LoginResponse)
+            {
+                return ((LoginResponse)response).employee;
+            }
+            else
+            {
+                throw new Exception("Unknown server response");
+            }*/
         }
 
-        
+        public void addObserver(Reservation reservation, IObserver observer)
+        {
+            client = observer;
+        }
 
+        public void setClient(IObserver client)
+        {
+            this.client = client;
+        }
+
+        public void removeObserver(Reservation reservation, IObserver observer)
+        {
+            closeConnection();
+            client = null;
+        }
     }
 }

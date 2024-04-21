@@ -39,9 +39,9 @@ namespace Server.networking
             }
         }
 
-        public void notify(Reservation newDonation)
+        public void notify()
         {
-            throw new NotImplementedException();
+            sendResponse(new NotifyResponse());
         }
 
         public virtual void run()
@@ -96,7 +96,106 @@ namespace Server.networking
                 }
                 return new LoginResponse(got);
             }
-           
+            if (request is FindAllTripsRequest findTrips)
+            {
+                Console.WriteLine("FindTrips request ...");
+               
+                IEnumerable<Trip> trips=new List<Trip>();
+                try
+                {
+                    lock (service)
+                    {
+                        trips = service.getAllTrip();
+                    }
+                }
+                catch (Exception e)
+                {
+                    connected = false;
+                    return new ErrorResponse(e.Message);
+                }
+                return new FindAllTripsResponse(trips);
+            }
+
+            if (request is getAllReservationsAtRequest reservation)
+            {
+                Console.WriteLine("Reserve request ...");
+                int resnumber=0;
+                try
+                {
+                    lock (service)
+                    {
+                        resnumber = service.getAllReservationsAt(((getAllReservationsAtRequest)reservation).id);
+                    }
+                }
+                catch (Exception e)
+                {
+                    connected = false;
+                    return new ErrorResponse(e.Message);
+                }
+                return new getAllReservationsAtResponse(resnumber);
+            }
+
+            if (request is getAllClientsRequest  getClients)
+            {
+                Console.WriteLine("ClientsAll request ...");
+
+                IEnumerable<Common.model.Client> clients = new List<Common.model.Client>();
+                try
+                {
+                    lock (service)
+                    {
+                        clients = service.getAllClients();
+                    }
+                }
+                catch (Exception e)
+                {
+                    connected = false;
+                    return new ErrorResponse(e.Message);
+                }
+                return new getAllClientsResponse(clients);
+            }
+
+            if (request is getAllFilteredTripsRequest findTripsfiletred)
+            {
+                Console.WriteLine("FindTrips request ...");
+
+                IEnumerable<Trip> trips = new List<Trip>();
+                try
+                {
+                    lock (service)
+                    {
+                        
+                        trips = service.getAllFilteredTris(findTripsfiletred.place, findTripsfiletred.startDate,findTripsfiletred.endDate);
+                    }
+                }
+                catch (Exception e)
+                {
+                    connected = false;
+                    return new ErrorResponse(e.Message);
+                }
+                return new getAllFilteredTripsResponse(trips);
+            }
+            if (request is saveReservationRequest res)
+            {
+                Console.WriteLine("reservation making request ...");
+
+                
+                try
+                {
+                    lock (service)
+                    {
+                        bool result=service.saveReservation(res.clientName,res.phoneNumber,res.noSeats,res.trip,res.responsibleEmployee,res.client);
+                        notify();
+                        return new saveReservationResponse();
+                    }
+                }
+                catch (Exception e)
+                {
+                    connected = false;
+                    return new ErrorResponse(e.Message);
+                }
+            }
+
             return new ErrorResponse("Unknown request");
         }
 

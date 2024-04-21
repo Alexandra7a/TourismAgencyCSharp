@@ -8,6 +8,6 @@ namespace Common.business
 {
     public interface IObserver
     {
-        public void notify(Reservation newDonation);
+        public void notify();
     }
 }

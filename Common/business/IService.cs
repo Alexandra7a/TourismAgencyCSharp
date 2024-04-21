@@ -17,12 +17,14 @@ namespace Common.business
         public int getAllReservationsAt(long id);
 
 
-        public IEnumerable<Client> getAllClients();
+        public IEnumerable<Common.model.Client> getAllClients();
 
 
         public IEnumerable<Trip> getAllFilteredTris(string place, DateTime startDate, DateTime endDate);
 
-        public void saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Client client);
-        
+        public bool saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Common.model.Client client);
+
+        public void logOutClicked();
+
     }
 }

@@ -47,6 +47,7 @@ namespace   Server.repository
             using (var comm=connection.CreateCommand())
             {
                 comm.CommandText = "insert into reservations (clientName, phoneNumber, noSeats, id_trip, username_employee, id_client) " +
+                    "OUTPUT Inserted.id_reservation" +
                     "VALUES (@clientName, @phoneNumber, @noSeats, @id_trip, @username_employee, @id_client)";
 
                 IDbDataParameter clientN = comm.CreateParameter();
@@ -84,6 +85,7 @@ namespace   Server.repository
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
                 {
+                   
                     logger.Error("Something went wrong when adding the reservation {0}" + entity);
                     return false;
                 }    
