@@ -38,6 +38,7 @@ namespace ClientForm.business
             this.host = host;
             this.port = port;
             responses = new Queue<IResponse>();
+
         }
 
         private void initializeConnection()
@@ -90,7 +91,7 @@ namespace ClientForm.business
                     Console.WriteLine("response received " + response);
                     if (response is NotifyResponse notifyResponse)
                     {
-                        client.notify(); ///// aici notific clientii ca s-a schimbat lista 
+                        this.client.notify(); ///// aici notific clientii ca s-a schimbat lista 
                     }
                     else
                     {
@@ -247,7 +248,7 @@ namespace ClientForm.business
             }*/
         }
 
-        public void addObserver(Reservation reservation, IObserver observer)
+        public void addObserver( IObserver observer)
         {
             client = observer;
         }
@@ -261,6 +262,11 @@ namespace ClientForm.business
         {
             closeConnection();
             client = null;
+        }
+
+        public void removeObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

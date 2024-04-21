@@ -47,7 +47,6 @@ namespace   Server.repository
             using (var comm=connection.CreateCommand())
             {
                 comm.CommandText = "insert into reservations (clientName, phoneNumber, noSeats, id_trip, username_employee, id_client) " +
-                    "OUTPUT Inserted.id_reservation" +
                     "VALUES (@clientName, @phoneNumber, @noSeats, @id_trip, @username_employee, @id_client)";
 
                 IDbDataParameter clientN = comm.CreateParameter();

@@ -25,6 +25,9 @@ namespace Common.business
         public bool saveReservation(string clientName, string phoneNumber, int noSeats, Trip trip, Employee responsibleEmployee, Common.model.Client client);
 
         public void logOutClicked();
+        public void addObserver( IObserver observer);
+
+        public void removeObserver(IObserver observer);
 
     }
 }

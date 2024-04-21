@@ -23,6 +23,7 @@ namespace ClientForm
             InitializeComponent();
             this.service = service;
             this.responsibleEmployee = responsibleEmployee;
+            this.service.addObserver(this);
             InitModel();
             InitClientModel();
         }
@@ -199,7 +200,8 @@ namespace ClientForm
 
         public void notify()
         {
-            InitModel();
+           
+            allTripsGrid.Refresh();
 
             //Decimal sum = donation.Sum;
             //long donorId = donation.DonorId;

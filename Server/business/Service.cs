@@ -67,5 +67,15 @@ namespace Server.business
         {
             throw new NotImplementedException();
         }
+
+        public void addObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void removeObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
