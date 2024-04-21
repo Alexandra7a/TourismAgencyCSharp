@@ -200,23 +200,9 @@ namespace ClientForm
 
         public void notify()
         {
+            //InitModel()
            
             allTripsGrid.Refresh();
-
-            //Decimal sum = donation.Sum;
-            //long donorId = donation.DonorId;
-            //long volunteerId = donation.VolunteerId;
-            //long charityId = donation.CharityId;
-
-            //for (int i = 0; i < charitiesGridView.RowCount; i++)
-            //{
-            //    if (long.Parse(charitiesGridView["Id", i].Value.ToString()) == charityId)
-            //    {
-            //        charitiesGridView["Sum", i].Value =
-            //            Decimal.Parse(charitiesGridView["Sum", i].Value.ToString()) + sum;
-            //    }
-            //}
-            // charitiesGridView.Refresh();
         }
     }
 }
