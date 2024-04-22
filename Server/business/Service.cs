@@ -16,6 +16,7 @@ namespace Server.business
         private ReservationDBRepository reservationRepository;
         private EmployeeDBRepository employeeRepository;
         private ClientDBRepository clientRepository;
+        private readonly IDictionary<Employee, IObserver> loggedClients;
 
         public Service(TripDBRepository repo, ReservationDBRepository repo2, EmployeeDBRepository repo3, ClientDBRepository repo4)
         {
@@ -23,18 +24,27 @@ namespace Server.business
             this.reservationRepository = repo2;
             this.employeeRepository = repo3;
             this.clientRepository = repo4;
+
+            loggedClients=new Dictionary<Employee, IObserver>();
         }
 
         public IEnumerable<Trip> getAllTrip()
         {
             return tripRepository.findAll();
         }
+
+        /*THE LOG IN**/
         public Employee findUser(String user, String pass)
         {
             Employee result = employeeRepository.findOnebyUsername(user);
             if (result != null && result.Password.Equals(pass))
-                return result;
-
+            {
+                if (loggedClients.ContainsKey(result)) {
+                    throw new Exception("User already logged!");
+                }
+               
+                    return result;
+            }
             return null;
 
         }
@@ -59,6 +69,12 @@ namespace Server.business
             Reservation reservation = new Reservation(clientName, phoneNumber, noSeats, trip, responsibleEmployee, client);
             if (!reservationRepository.save(reservation))
                 throw new Exception("Not saved");
+
+
+            foreach (var observer in loggedClients.Values)
+            {
+                observer.notify();
+            }
             return true;
 
         }
@@ -68,14 +84,16 @@ namespace Server.business
             throw new NotImplementedException();
         }
 
-        public void addObserver(IObserver observer)
+        public void addObserver(Employee employee, IObserver observer)
         {
-            throw new NotImplementedException();
+            loggedClients[employee] = observer;
+
         }
 
         public void removeObserver(IObserver observer)
         {
             throw new NotImplementedException();
         }
-    }
+
+         }
 }

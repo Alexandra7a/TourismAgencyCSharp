@@ -64,7 +64,6 @@ namespace ClientForm.business
             try
             {
                 stream.Close();
-
                 connection.Close();
                 _waitHandle.Close();
                 client = null;
@@ -87,8 +86,10 @@ namespace ClientForm.business
             {
                 try
                 {
-                    object response = formatter.Deserialize(stream);
+                   object response = formatter.Deserialize(stream);
                     Console.WriteLine("response received " + response);
+                   
+
                     if (response is NotifyResponse notifyResponse)
                     {
                         this.client.notify(); ///// aici notific clientii ca s-a schimbat lista 
@@ -159,7 +160,7 @@ namespace ClientForm.business
         public Employee findUser(string user, string pass)
         {
             initializeConnection();
-            sendRequest(new LoginRequest(user, pass));
+            sendRequest(new LoginRequest(user, pass)); /// aici transmit clientul curent sa fie pus in lista din service
             IResponse response = readResponse();
             if (response is ErrorResponse)
             {
@@ -174,6 +175,7 @@ namespace ClientForm.business
                 throw new Exception("Unknown server response");
             }
         }
+
 
         public int getAllReservationsAt(long id)
         {
@@ -248,9 +250,9 @@ namespace ClientForm.business
             }*/
         }
 
-        public void addObserver( IObserver observer)
+        public void addObserver(Employee employee, IObserver observer)
         {
-            client = observer;
+            this.client = observer;
         }
 
         public void setClient(IObserver client)

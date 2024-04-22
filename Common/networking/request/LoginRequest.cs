@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,6 @@ namespace Common.networking.request
         public LoginRequest(string username, string password)
         {
             this.username = username;
-            this.password = password;
-        }
+            this.password = password;        }
     }
 }

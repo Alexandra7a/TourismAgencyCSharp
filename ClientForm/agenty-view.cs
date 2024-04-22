@@ -23,7 +23,11 @@ namespace ClientForm
             InitializeComponent();
             this.service = service;
             this.responsibleEmployee = responsibleEmployee;
-            this.service.addObserver(this);
+
+
+            this.service.addObserver(responsibleEmployee,this);
+
+
             InitModel();
             InitClientModel();
         }
@@ -180,7 +184,6 @@ namespace ClientForm
                 {
                     bool response=service.saveReservation(clientName, phoneNumber, noSeats, trip, responsibleEmployee, client);
                     MessageBox.Show("Ticket taken successfully!");
-                    InitModel();
                 }
                 catch (Exception ex)
                 {
@@ -197,13 +200,24 @@ namespace ClientForm
 
         }
 
+        public delegate void UpdateListCallback();
 
         public void notify()
         {
-            //InitModel()
+            InitModel();
+
            
-            allTripsGrid.Refresh();
         }
     }
 }
 ;
+
+
+
+
+
+/**
+ * CRED CA:
+ * -VA TREBUI SA FACI CONTROLLERELE 
+ * - SA TE UITI CUM AI FACUT LA JAVA
+ * **/

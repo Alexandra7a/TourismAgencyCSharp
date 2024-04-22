@@ -34,18 +34,27 @@ namespace ClientForm
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            var result = service.findUser(userField.Text.ToString(), passField.Text.ToString());
-            if (result != null)
+            try
             {
-                Form ff = new Form1(service,result);
-               
-                ff.Show();
-                //this.Close();
+                var result = service.findUser(userField.Text.ToString(), passField.Text.ToString());
+                if (result != null)
+                {
+                    Form ff = new Form1(service, result);
+
+                    ff.Show();
+                    //this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Password or username wrong");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Password or username wrong");
+                MessageBox.Show(ex.Message);
+
             }
+
         }
     }
 }

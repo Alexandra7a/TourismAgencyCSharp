@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Common.business;
 using Common.model;
@@ -22,11 +23,14 @@ namespace Server.networking
         private NetworkStream stream;
         private IFormatter formatter;
         private volatile bool connected;
+        private Queue<IRequest> requests;
+
 
         public ServerWorker(IService service, TcpClient connection)
         {
             this.service = service;
             this.connection = connection;
+            requests = new Queue<IRequest>();
             try
             {
                 stream = connection.GetStream();
@@ -52,9 +56,17 @@ namespace Server.networking
                 {
                     object request = formatter.Deserialize(stream);
                     object response = handleRequest((IRequest)request);
+   
                     if (response != null)
                     {
                         sendResponse((IResponse)response);
+                    }
+                    else
+                    {
+                        lock (request)
+                        {
+                            requests.Enqueue((IRequest)request);
+                        }
                     }
                 }
                 catch (Exception e)
@@ -94,6 +106,7 @@ namespace Server.networking
                     connected = false;
                     return new ErrorResponse(e.Message);
                 }
+                this.service.addObserver(got, this);
                 return new LoginResponse(got);
             }
             if (request is FindAllTripsRequest findTrips)
@@ -185,7 +198,6 @@ namespace Server.networking
                     lock (service)
                     {
                         bool result=service.saveReservation(res.clientName,res.phoneNumber,res.noSeats,res.trip,res.responsibleEmployee,res.client);
-                        notify();
                         return new saveReservationResponse();
                     }
                 }

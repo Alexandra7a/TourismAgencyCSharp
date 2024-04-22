@@ -16,6 +16,7 @@ namespace ClientForm
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             IService serviceProxy = new ServiceProxy("127.0.0.1", 55556);
+            
             Application.Run(new Form2(serviceProxy));
         }
     }
