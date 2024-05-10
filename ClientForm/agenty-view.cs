@@ -202,11 +202,31 @@ namespace ClientForm
 
         public delegate void UpdateListCallback();
 
-        public void notify()
+        
+        public new void Update()
         {
-            InitModel();
+            if (InvokeRequired)
+            {
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    InitModel();
+                });
+            }
+            else
+            {
+                InitModel();
+            }
 
-           
+        }
+
+        public void ReservationMade()
+        {
+            Update();
+        }
+
+        public void reservationMade()
+        {
+            throw new NotImplementedException();
         }
     }
 }

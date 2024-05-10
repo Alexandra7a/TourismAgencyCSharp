@@ -1,4 +1,4 @@
-﻿/*using Common.business;
+﻿using Common.business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,4 +33,3 @@ namespace ClientForm
 
     }
 }
-*/

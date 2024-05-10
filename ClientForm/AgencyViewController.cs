@@ -1,4 +1,4 @@
-﻿/*using Common.business;
+﻿using Common.business;
 using Common.model;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace ClientForm
         public void setService(IService service)
         {
             this.service = service;
-            this.service.addObserver(this);
+            //this.service.addObserver(this);
         }
 
         public void notify()
@@ -57,11 +57,15 @@ namespace ClientForm
 
         internal void findUser(string user, string pass)
         {
-            Employee employe = service.findUser(user, pass, this);
-            this.responsibleEmployee = employe;
+           // Employee employe = service.findUser(user, pass, this);
+            //this.responsibleEmployee = employe;
 
 
         }
+
+        public void reservationMade()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-*/

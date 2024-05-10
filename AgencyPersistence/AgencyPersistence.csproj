@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.17" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.4" />
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetFramework" Version="1.0.118" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AgencyModel\AgencyModel.csproj" />
+    <ProjectReference Include="..\Utils\Utils.csproj" />
+  </ItemGroup>
+
+</Project>

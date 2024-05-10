@@ -73,7 +73,7 @@ namespace Server.business
 
             foreach (var observer in loggedClients.Values)
             {
-                observer.notify();
+                observer.reservationMade();
             }
             return true;
 

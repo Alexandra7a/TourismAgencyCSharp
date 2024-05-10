@@ -1,0 +1,422 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServer\\AgencyServer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj",
+        "projectName": "AgencyModel",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\AgencyNetworking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\AgencyNetworking.csproj",
+        "projectName": "AgencyNetworking",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\AgencyNetworking.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj",
+        "projectName": "AgencyPersistence",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Stub.System.Data.SQLite.Core.NetFramework": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite.EF6": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServer\\AgencyServer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServer\\AgencyServer.csproj",
+        "projectName": "AgencyServer",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServer\\AgencyServer.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\AgencyNetworking.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyNetworking\\AgencyNetworking.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj",
+        "projectName": "AgencyServices",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\AgencyServices.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyModel\\AgencyModel.csproj"
+              },
+              "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj": {
+                "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\AgencyPersistence\\AgencyPersistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\Utils.csproj",
+        "projectName": "Utils",
+        "projectPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

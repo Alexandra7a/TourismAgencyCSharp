@@ -48,6 +48,11 @@ namespace Server.networking
             sendResponse(new NotifyResponse());
         }
 
+        public void reservationMade()
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void run()
         {
             while (connected)

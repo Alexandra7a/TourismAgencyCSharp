@@ -1,0 +1,6 @@
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.csproj.AssemblyReference.cache
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.exe.config
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.Properties.Resources.resources
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.csproj.GenerateResource.cache
+C:\Users\Alexandra\source\MPP\MPPcSharp\MPPcSharp\obj\Debug\MPPcSharp.csproj.CoreCompileInputs.cache
