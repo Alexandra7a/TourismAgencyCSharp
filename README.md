@@ -1,3 +1,4 @@
 # Schimbari
-- adaugare observer
-- adaugare server
+- adaugare client-server architecture
+- adaugare observer functional
+
