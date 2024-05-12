@@ -7,9 +7,6 @@ namespace TripNetworking
     {
         OK,
         ERROR,
-        UPDATE,
-        NEW_MESSAGE,
-        FRIEND_LOGGED_IN,
-        FRIEND_LOGGED_OUT
+        UPDATE
     }
 }

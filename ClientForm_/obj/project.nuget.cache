@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eV0xiFAvFqwJ1lccgBt5pDGW/mB/ygdAgeMmlG7j9jmzUacsPV7SAZlkDsMxXbxHKLbbeW7GHorXu7GZRHa89w==",
+  "dgSpecHash": "l0c8YGChLK/us0Gyplhe75ZXZ/ngzncK+d2rueznQbcMrwyl70cvTCQsXdqcQudUEw5pjgtkhIZ7pbT+ixmjWQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alexandra\\source\\MPP\\MPPcSharp\\ClientForm_\\AgencyClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexandra\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Alexandra\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
     "C:\\Users\\Alexandra\\.nuget\\packages\\log4net\\2.0.17\\log4net.2.0.17.nupkg.sha512",
     "C:\\Users\\Alexandra\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Alexandra\\.nuget\\packages\\microsoft.data.sqlite\\8.0.4\\microsoft.data.sqlite.8.0.4.nupkg.sha512",

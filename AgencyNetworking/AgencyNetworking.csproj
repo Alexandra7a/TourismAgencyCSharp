@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.26.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AgencyModel\AgencyModel.csproj" />
     <ProjectReference Include="..\AgencyServices\AgencyServices.csproj" />
   </ItemGroup>

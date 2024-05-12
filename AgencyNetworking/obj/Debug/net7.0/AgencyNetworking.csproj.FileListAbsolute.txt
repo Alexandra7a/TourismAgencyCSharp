@@ -1,8 +1,3 @@
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.csproj.AssemblyReference.cache
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.AssemblyInfoInputs.cache
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.AssemblyInfo.cs
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.csproj.CoreCompileInputs.cache
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyNetworking.deps.json
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyNetworking.runtimeconfig.json
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyNetworking.dll
@@ -14,11 +9,16 @@ C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\Utils.
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyModel.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyServices.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyPersistence.pdb
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyPersistence.dll.config
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\Utils.pdb
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.csproj.AssemblyReference.cache
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.AssemblyInfoInputs.cache
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.AssemblyInfo.cs
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.csproj.CoreCompileInputs.cache
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.csproj.CopyComplete
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.dll
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\refint\AgencyNetworking.dll
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\AgencyNetworking.genruntimeconfig.cache
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\obj\Debug\net7.0\ref\AgencyNetworking.dll
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyNetworking\bin\Debug\net7.0\AgencyPersistence.dll.config

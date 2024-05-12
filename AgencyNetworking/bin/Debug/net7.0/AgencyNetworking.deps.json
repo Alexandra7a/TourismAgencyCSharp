@@ -9,7 +9,8 @@
       "AgencyNetworking/1.0.0": {
         "dependencies": {
           "AgencyModel": "1.0.0",
-          "AgencyServices": "1.0.0"
+          "AgencyServices": "1.0.0",
+          "Google.Protobuf": "3.26.1"
         },
         "runtime": {
           "AgencyNetworking.dll": {}
@@ -31,6 +32,14 @@
           "lib/netstandard2.1/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.400.420.21404"
+          }
+        }
+      },
+      "Google.Protobuf/3.26.1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.26.1.0",
+            "fileVersion": "3.26.1.0"
           }
         }
       },
@@ -498,6 +507,13 @@
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "Google.Protobuf/3.26.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CHZX8zXqhF/fdUtd+AYzew8T2HFkAoe5c7lbGxZY/qryAlQXckDvM5BfOJjXlMS7kyICqQTMszj4w1bX5uBJ/w==",
+      "path": "google.protobuf/3.26.1",
+      "hashPath": "google.protobuf.3.26.1.nupkg.sha512"
     },
     "log4net/2.0.17": {
       "type": "package",

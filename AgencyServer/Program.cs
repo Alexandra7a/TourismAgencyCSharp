@@ -12,6 +12,7 @@ namespace AgencyServer
     {
         static void Main(string[] args)
         {
+
             IDictionary<string, string> serverProps = new SortedList<string, string>();
             serverProps.Add("ConnectionString", GetConnectionStringByName("agentieTurism"));
             Console.WriteLine(serverProps.Values);
@@ -20,8 +21,18 @@ namespace AgencyServer
             IEmployeeRepository employeeRepository = new EmployeeDBRepository(serverProps);
             IClientRepository clientRepository = new ClientDBRepository(serverProps);
             IService service = new Service(tripRepository, reservationRepository, employeeRepository, clientRepository);
+            startPROTOserver(service);
+        }
 
-           Server server = new Server("127.0.0.1", 55556, service);
+        static void startPROTOserver(IService service)
+        {
+        
+            ConcurrentAbstractServer server = new ConcurrentServerProto("127.0.0.1", 55556, service);
+            server.Start();
+        }
+        static void startRPCserver(IService service)
+        {
+            Server server = new Server("127.0.0.1", 55556, service);
             server.Start();
         }
 

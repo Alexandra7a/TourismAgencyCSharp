@@ -4,8 +4,11 @@ C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencySe
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyServices.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyModel.dll
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyPersistence.dll
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\Utils.dll
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyModel.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyPersistence.pdb
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyPersistence.dll.config
+C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\Utils.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\AgencyServices.csproj.AssemblyReference.cache
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\AgencyServices.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\AgencyServices.AssemblyInfoInputs.cache
@@ -17,6 +20,3 @@ C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\refint\A
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\AgencyServices.pdb
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\AgencyServices.genruntimeconfig.cache
 C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\obj\Debug\net7.0\ref\AgencyServices.dll
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\Utils.dll
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\Utils.pdb
-C:\Users\Alexandra\source\MPP\MPPcSharp\AgencyServices\bin\Debug\net7.0\AgencyPersistence.dll.config
