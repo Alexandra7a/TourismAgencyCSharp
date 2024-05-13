@@ -10,6 +10,8 @@ using log4net.DateFormatter;
 using AgencyModel.model;
 using Utils;
 using AgencyPersistence.repository.interfaces;
+using System.Globalization;
+using AgencyModel.model.dto;
 
 namespace AgencyPersistence.repository
 {
@@ -19,7 +21,7 @@ namespace AgencyPersistence.repository
 
         private static readonly ILog logger = LogManager.GetLogger("TripDBRepository");
         private IDbConnection connection;
-        private string pattern = "yyyy-MM-dd HH:mm";
+        private string pattern = "yyyy-MM-ddTHH:mm";
 
         IDictionary<String, string> props;
         public TripDBRepository(IDictionary<string, string> props)
@@ -51,14 +53,23 @@ namespace AgencyPersistence.repository
                         Int64 id = dataR.GetInt64(0);
                         string place = dataR.GetString(1);
                         string transportCompanyName = dataR.GetString(2);
+                        Console.WriteLine(dataR.GetString(3));
+
+                        // DateTime departure = DateTime.ParseExact(dataR.GetString(3),pattern, CultureInfo.InvariantCulture);
                         DateTime departure = DateTime.Parse(dataR.GetString(3));
                         float price = dataR.GetFloat(4);
                         int totalSeats = dataR.GetInt32(5);
+                        Console.WriteLine(departure);
 
                         Trip trip = new Trip(place,transportCompanyName,departure,price,totalSeats);
                         trip.Id = id;
                         trips.Add(trip);
                     
+                    }
+                    Console.WriteLine ("ACIS SUNTEM IN REPO");
+                    foreach (Trip t in trips)
+                    {
+                        Console.WriteLine(t);
                     }
                 }
             }
@@ -105,7 +116,7 @@ namespace AgencyPersistence.repository
                         Int64 id = dataR.GetInt64(0);
                         string place = dataR.GetString(1);
                         string transportCompanyName = dataR.GetString(2);
-                        DateTime departure =DateTime.Parse(dataR.GetString(3));
+                        DateTime departure =DateTime.ParseExact(dataR.GetString(3), pattern, CultureInfo.InvariantCulture);
                         float price = dataR.GetFloat(4);
                         int totalSeats = dataR.GetInt32(5);
 

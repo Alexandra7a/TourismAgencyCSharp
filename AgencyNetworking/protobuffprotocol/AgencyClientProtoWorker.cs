@@ -167,6 +167,11 @@ namespace AgencyNetworking.protobuffprotocol
                     lock (service)
                     {
                         trips = (List<TripDTO>)service.getAllTrips();
+                        Console.WriteLine("ASA AJUNGE IN WORKER TRIPS");
+                        foreach(TripDTO t in trips)
+                        {
+                            Console.WriteLine(t);
+                        }
                     }
                 }
                 catch (Exception e)

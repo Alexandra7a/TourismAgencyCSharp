@@ -12,12 +12,14 @@ using ClientDTO = AgencyModel.model.dto.ClientDTO;
 using EmployeeDTO = AgencyModel.model.dto.EmployeeDTO;
 using TripFilterBy = AgencyModel.model.dto.TripFilterBy;
 using ReservationDTO = AgencyModel.model.dto.ReservationDTO;
-
+using System.Globalization;
 
 namespace AgencyNetworking.protobuffprotocol
 {
     internal class ProtoUtils
     {
+        private static string formatter = "yyyy-MM-dd HH:mm";
+
         public static Proto.Response createUpdateResponse()
         {
             Proto.Response response = new Proto.Response { Type=Proto.Response.Types.ReponseType.Update};
@@ -42,18 +44,26 @@ namespace AgencyNetworking.protobuffprotocol
         {
             //make a reponse which contains trip data to transfer
             Proto.Response response = new Proto.Response { Type = Proto.Response.Types.ReponseType.Ok };
-            foreach(TripDTO trip in trips)
+                      string formatter = "yyyy-MM-dd HH:mm";
+
+
+            foreach (TripDTO trip in trips)
             {
+                DateTime formattedDate = DateTime.ParseExact(trip.Departure.ToString(),formatter, CultureInfo.InvariantCulture);
+
                 Proto.TripDTO tripDTO = new Proto.TripDTO
                 {
                     Id = trip.Id,
                     Place = trip.Place,
                     TransportCompanyName = trip.TransportCompanyName,
-                    Departure = trip.Departure.ToString(),
+                    Departure = formattedDate.ToString(),
+                   //Departure = trip.Departure.ToString(),
                     Price = trip.Price,
                     TotalSeats = trip.TotalSeats
 
                 };
+                Console.WriteLine(tripDTO.Departure);
+
                 response.Trips.Add(tripDTO);
 
             }
