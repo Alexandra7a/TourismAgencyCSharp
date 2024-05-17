@@ -116,10 +116,13 @@ namespace AgencyPersistence.repository
                     {
                         Console.WriteLine("Aici sunt ", dataR.GetInt32(0));
                         int result = dataR.GetInt32(0);
+                        Console.WriteLine("RESERVATION NUMBER IS {0}", result);
                         return result;
                     }
                 }
             }
+            Console.WriteLine("RESERVATION NUMBER IS ", 0);
+
             return 0;
         }
     }

@@ -79,6 +79,8 @@ namespace AgencyPersistence.repository
         }
         public IEnumerable<Trip> findAllTripPlaceTime(string placeToVisit, DateTime startTime, DateTime endTime)
         {
+            string new_pattern = "yyyy-MM-dd HH:mm";
+
             logger.Info("entered the findAllTripPlaceTime method ");
             IList<Trip> filtered_trips = new List<Trip>();
             using (var comm = connection.CreateCommand())
@@ -93,20 +95,19 @@ namespace AgencyPersistence.repository
 
                 IDbDataParameter paramStartTime=comm.CreateParameter();
                 paramStartTime.ParameterName = "@startTime";
-                paramStartTime.Value = startTime.ToString(pattern);
+                paramStartTime.Value = startTime.ToString(new_pattern);
                 comm.Parameters.Add(paramStartTime);
 
 
-
-                IDbDataParameter paramEndDate =comm.CreateParameter();
+        IDbDataParameter paramEndDate =comm.CreateParameter();
                 paramEndDate.ParameterName = "@endTime";
-                paramEndDate.Value = endTime.ToString(pattern);
+                paramEndDate.Value = endTime.ToString(new_pattern);
                 comm.Parameters.Add(paramEndDate);
                 Console.WriteLine(startTime);
                 Console.WriteLine(endTime);
                 Console.WriteLine("modificate");
-                Console.WriteLine(startTime.ToString(pattern));
-                Console.WriteLine(endTime.ToString(pattern));
+                Console.WriteLine(startTime.ToString(new_pattern));
+                Console.WriteLine(endTime.ToString(new_pattern));
 
                 using (var dataR = comm.ExecuteReader()) { 
                
@@ -116,7 +117,7 @@ namespace AgencyPersistence.repository
                         Int64 id = dataR.GetInt64(0);
                         string place = dataR.GetString(1);
                         string transportCompanyName = dataR.GetString(2);
-                        DateTime departure =DateTime.ParseExact(dataR.GetString(3), pattern, CultureInfo.InvariantCulture);
+                        DateTime departure =DateTime.ParseExact(dataR.GetString(3), new_pattern, CultureInfo.InvariantCulture);
                         float price = dataR.GetFloat(4);
                         int totalSeats = dataR.GetInt32(5);
 

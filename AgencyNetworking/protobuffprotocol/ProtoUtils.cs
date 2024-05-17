@@ -20,6 +20,7 @@ namespace AgencyNetworking.protobuffprotocol
     {
         private static string formatter = "yyyy-MM-dd HH:mm";
 
+
         public static Proto.Response createUpdateResponse()
         {
             Proto.Response response = new Proto.Response { Type=Proto.Response.Types.ReponseType.Update};
@@ -49,14 +50,14 @@ namespace AgencyNetworking.protobuffprotocol
 
             foreach (TripDTO trip in trips)
             {
-                DateTime formattedDate = DateTime.ParseExact(trip.Departure.ToString(),formatter, CultureInfo.InvariantCulture);
+                //DateTime formattedDate = DateTime.ParseExact(trip.Departure.ToString(),formatter, CultureInfo.InvariantCulture);
 
                 Proto.TripDTO tripDTO = new Proto.TripDTO
                 {
                     Id = trip.Id,
                     Place = trip.Place,
                     TransportCompanyName = trip.TransportCompanyName,
-                    Departure = formattedDate.ToString(),
+                    Departure =trip.Departure.ToString(),
                    //Departure = trip.Departure.ToString(),
                     Price = trip.Price,
                     TotalSeats = trip.TotalSeats
@@ -115,6 +116,7 @@ namespace AgencyNetworking.protobuffprotocol
 
             AgencyModel.model.Employee employee = new AgencyModel.model.Employee(reservationDTO.ResponsibleEmployee.Username,
                     reservationDTO.ResponsibleEmployee.Password);
+            //employee.Id(reservationDTO.ResponsibleEmployee.);
 
             AgencyModel.model.Trip trip = new AgencyModel.model.Trip(reservationDTO.Trip.Place,
                     reservationDTO.Trip.TransportCompanyName,
@@ -122,8 +124,10 @@ namespace AgencyNetworking.protobuffprotocol
                     reservationDTO.Trip.Price,
                     reservationDTO.Trip.TotalSeats
                     );
-            
+            trip.Id=reservationDTO.Trip.Id;
+
             AgencyModel.model.Client client = new AgencyModel.model.Client(reservationDTO.Client.Name, DateTime.Parse(reservationDTO.Trip.Departure));
+            client.Id = reservationDTO.Client.Id;
 
             return new ReservationDTO(reservationDTO.ClientName,
                     reservationDTO.PhoneNumber,

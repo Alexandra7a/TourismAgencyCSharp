@@ -172,12 +172,15 @@ namespace AgencyNetworking.protobuffprotocol
                         {
                             Console.WriteLine(t);
                         }
+                        
+
                     }
                 }
                 catch (Exception e)
                 {
                     return ProtoUtils.createErrorResponse("Error at find all trips request");
                 }
+                Console.WriteLine("Sending respnse TRIPS");
                 return ProtoUtils.createFindAllTripsResponse(trips);
             }
 
@@ -199,7 +202,7 @@ namespace AgencyNetworking.protobuffprotocol
                 return ProtoUtils.createNumberReservationsResponse(reservationsNnumber);
             }
 
-            if (request.Type == Proto.Request.Types.RequestType.FindAllTrips)
+            if (request.Type == Proto.Request.Types.RequestType.FindAllClients)
             {
                 Console.WriteLine("ClientsAll request ...");
 
@@ -229,7 +232,7 @@ namespace AgencyNetworking.protobuffprotocol
                     lock (service)
                     {
                         TripFilterBy data = ProtoUtils.getTripFilterByDataFromRequest(request);
-
+                        Console.WriteLine("am trecut de extras date proto");
                         string placeToVisit = data.PlaceToVisit;
                         DateTime startTime = data.StartTime;
                         DateTime endTime = data.EndTime;
@@ -261,6 +264,8 @@ namespace AgencyNetworking.protobuffprotocol
                     return ProtoUtils.createErrorResponse("Error at reserving a ticket........");
                 }
             }
+            Console.WriteLine("WRONG");
+            Console.WriteLine(request.ToString());
             return ProtoUtils.createErrorResponse("Invalid request type");
         }
 
@@ -272,7 +277,7 @@ namespace AgencyNetworking.protobuffprotocol
                 lock (stream)
                 {
 
-                    Console.WriteLine($"Send response ... {response}");
+                    Console.WriteLine($"Send response:  {response}");
                     // formatter.Serialize(stream, response);
                     response.WriteDelimitedTo(stream);
                     stream.Flush();
